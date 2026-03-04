@@ -1,0 +1,385 @@
+/* ProjectDetail.css (B2B Alibaba + Coupang Hybrid Style) */
+
+.product-detail-page-b2b {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 240px 20px;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #333;
+}
+
+/* 브레드크럼 (상단 경로 표시) */
+.breadcrumb {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.breadcrumb span {
+  cursor: pointer;
+}
+.breadcrumb span:hover {
+  text-decoration: underline;
+}
+.breadcrumb .current {
+  color: #111;
+  font-weight: 500;
+}
+
+/* 상단 메인 영역 */
+.detail-top-b2b {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+}
+
+/* --- 갤러리 섹션 (왼쪽) --- */
+.detail-gallery-section {
+  display: flex;
+  gap: 15px;
+}
+
+.detail-thumb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumb-item {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e2e2e2;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.thumb-item.active,
+.thumb-item:hover {
+  border: 2px solid #ff6a00; /* 알리바바 오렌지 컬러 */
+}
+
+.thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detail-main-image {
+  width: 450px;
+  height: 450px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+.detail-main-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.no-image-box {
+  color: #999;
+  font-size: 16px;
+}
+
+/* --- 정보 및 주문 섹션 (오른쪽) --- */
+.detail-info-b2b {
+  flex: 1;
+  min-width: 450px;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.stars {
+  color: #ffb526;
+  margin-right: 5px;
+  font-size: 16px;
+}
+.rating-score {
+  font-weight: bold;
+  color: #111;
+  margin-right: 10px;
+}
+.review-count {
+  color: #0066c0; /* 알리바바 링크 컬러 */
+  cursor: pointer;
+}
+.review-count:hover {
+  text-decoration: underline;
+}
+.meta-divider {
+  margin: 0 10px;
+  color: #ccc;
+}
+.sold-count {
+  color: #555;
+  background: #f4f4f4;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+/* 가격 및 주문 패널 박스 */
+.price-order-panel {
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #e2e2e2;
+}
+
+.price-block {
+  display: flex;
+  flex-direction: column;
+}
+.price-label {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+.price-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ff6a00; /* 알리바바 오렌지 */
+  display: flex;
+  align-items: baseline;
+}
+.price-value .currency {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.min-order-block {
+  text-align: right;
+}
+.moq-label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+.moq-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 기본 정보 라인 */
+.info-row {
+  display: flex;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.info-label {
+  width: 100px;
+  color: #777;
+}
+.info-value {
+  flex: 1;
+  color: #111;
+  font-weight: 500;
+}
+.desc-text {
+  font-weight: normal;
+  color: #444;
+}
+
+.in-stock {
+  color: #00a650;
+}
+.out-of-stock {
+  color: #cb1400;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e2e2e2;
+  margin: 24px 0;
+}
+
+/* 구매 컨트롤 (수량, 가격) */
+.purchase-controls {
+  margin-bottom: 20px;
+}
+
+.quantity-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.qty-label {
+  width: 100px;
+  font-size: 14px;
+  color: #777;
+}
+
+.quantity-selector {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.quantity-selector button {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+.quantity-selector button:hover {
+  background: #f0f0f0;
+}
+.quantity-selector input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.total-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.total-label {
+  font-size: 15px;
+  color: #333;
+  margin-right: 10px;
+}
+.total-amount {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111;
+}
+
+/* 버튼 그룹 */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.btn-add-cart,
+.btn-buy-now {
+  flex: 1;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 24px; /* 알리바바 스타일 둥근 버튼 */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-cart {
+  background-color: #fff;
+  border: 1px solid #ff6a00;
+  color: #ff6a00;
+}
+.btn-add-cart:hover {
+  background-color: #fff0e6;
+}
+
+.btn-buy-now {
+  background-color: #ff6a00;
+  border: 1px solid #ff6a00;
+  color: #fff;
+}
+.btn-buy-now:hover {
+  background-color: #e65c00;
+}
+
+/* 공급업체 보증 문구 */
+.supplier-assurance {
+  font-size: 13px;
+  color: #555;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* --- 하단 상세 이미지 뷰 --- */
+.detail-bottom-section {
+  margin-top: 60px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.bottom-tabs {
+  display: flex;
+  background: #f8f8f8;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.tab-btn {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-right: 1px solid #e2e2e2;
+}
+
+.tab-btn.active {
+  background: #fff;
+  color: #ff6a00;
+  border-top: 3px solid #ff6a00;
+  margin-top: -1px; /* 상단 보더 맞추기 */
+}
+
+.detail-images-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.bottom-detail-img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.empty-details {
+  padding: 50px 0;
+  color: #888;
+  font-size: 16px;
+}

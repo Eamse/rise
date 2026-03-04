@@ -1,0 +1,90 @@
+{
+  "header": {
+    "search": {
+      "placeholder": "Maghanap",
+      "imageSearch": "Maghanap gamit ang Larawan",
+      "button": "Maghanap"
+    },
+    "utils": {
+      "languageLabel": "Wika:",
+      "languageValue": "Filipino",
+      "cart": "Cart",
+      "login": "Mag-login",
+      "signup": "Mag-sign up"
+    },
+    "nav": {
+      "allCategories": "Lahat ng Kategorya",
+      "featuredSelection": "Mga Tampok na Seleksyon",
+      "tradeAssurance": "Garantiya sa Kalakalan",
+      "buyerCentral": "Sentro ng Mamimili",
+      "helpCenter": "Sentro ng Tulong",
+      "appAndPlatform": "App at Platform na Programa",
+      "sellOn": "Magbenta sa RISE AUTOPARTS"
+    },
+    "tabs": {
+      "aiMode": "AI Mode",
+      "products": "Mga Produkto",
+      "manufacturers": "Mga Tagagawa",
+      "worldwide": "Buong Mundo"
+    }
+  },
+  "login": {
+    "title": "Mag-login",
+    "subtitle": "B2B C-parts Shopping Mall",
+    "userId": "User ID",
+    "userIdPlaceholder": "Ilagay ang iyong User ID",
+    "password": "Password",
+    "passwordPlaceholder": "Ilagay ang iyong password",
+    "loginButton": "Mag-login",
+    "loggingIn": "Nag-lo-login...",
+    "noAccount": "Wala pang account?",
+    "signupLink": "Mag-sign up",
+    "loginSuccess": "Matagumpay na naka-login!",
+    "loginFail": "Nabigo ang pag-login."
+  },
+  "signup": {
+    "title": "Mag-sign up",
+    "subtitle": "Pagpaparehistro sa B2B Mall",
+    "id": "User ID",
+    "name": "Buong Pangalan",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Kumpirmahin ang Password",
+    "company": "Pangalan ng Kumpanya",
+    "phone": "Numero ng Telepono",
+    "namePlaceholder": "Juan dela Cruz",
+    "passwordPlaceholder": "8+ karakter, titik at numero",
+    "confirmPasswordPlaceholder": "Muling ilagay ang password",
+    "companyPlaceholder": "Pangalan ng Kumpanya",
+    "signupButton": "Mag-rehistro",
+    "hasAccount": "May account na?",
+    "loginLink": "Mag-login",
+    "errors": {
+      "idLength": "Ang User ID ay dapat may hindi bababa sa 4 na karakter.",
+      "emailFormat": "Hindi wastong format ng email.",
+      "passwordLength": "Ang password ay dapat may hindi bababa sa 8 na karakter.",
+      "passwordMismatch": "Hindi tugma ang mga password."
+    }
+  },
+  "footer": {
+    "customerService": {
+      "title": "Serbisyo sa Customer",
+      "helpCenter": "Sentro ng Tulong",
+      "disputeResolution": "Resolusyon ng Alitan",
+      "contactSeller": "Makipag-ugnayan sa Nagbebenta",
+      "policyAndRules": "Patakaran at Panuntunan"
+    },
+    "about": {
+      "title": "Tungkol sa Amin",
+      "aboutUs": "Tungkol sa RISE AUTOPARTS",
+      "careers": "Karera",
+      "blog": "Blog"
+    },
+    "sell": {
+      "title": "Magbenta",
+      "sellOnRISE AUTOPARTS": "Magbenta sa RISE AUTOPARTS",
+      "successStories": "Mga Kwento ng Tagumpay"
+    },
+    "copyright": "All rights reserved."
+  }
+}

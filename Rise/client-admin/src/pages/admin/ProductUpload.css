@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+/* 전체 페이지 배경 */
+.upload-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  min-height: 100%;
+  background: #f4f6f9;
+}
+
+/* 카드 박스 */
+.upload-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  padding: 40px 48px;
+  width: 100%;
+  max-width: 780px;
+}
+
+/* 타이틀 */
+.upload-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a233a;
+  margin: 0 0 6px 0;
+}
+
+.upload-subtitle {
+  font-size: 14px;
+  color: #7a8c9e;
+  margin: 0 0 32px 0;
+}
+
+/* 폼 전체 */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 한 줄 나란히 배치 (가격, 재고, 최소주문 등) */
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* 개별 입력 그룹 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 라벨 */
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* 인풋 공통 스타일 */
+.form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a202c;
+  background: #fff;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.form-input.a::placeholder {
+  color: #4a5568;
+}
+
+/* 인풋 포커스 효과 */
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* placeholder */
+.form-input::placeholder {
+  color: #4a5568;
+}
+
+/* 파일 업로드 인풋 전용 */
+.form-input[type="file"] {
+  padding: 8px 12px;
+  background: #f8fafc;
+  color: #4a5568;
+  cursor: pointer;
+  border: 1.5px dashed #94a3b8;
+}
+
+.form-input[type="file"]:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+/* textarea */
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* 등록 버튼 */
+.upload-button {
+  margin-top: 8px;
+  padding: 14px;
+  background: linear-gradient(135deg, #3498db, #1a7bc8);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.upload-button:hover {
+  background: linear-gradient(135deg, #2980b9, #1569a8);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+}
+
+.upload-button:active {
+  transform: translateY(0px);
+}
+
+.upload-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 수정 / 취소 버튼 그룹 */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.button-group .upload-button {
+  margin-top: 0;
+  flex: 1;
+}
+
+.upload-button.cancel {
+  background: #e2e8f0;
+  color: #4a5568;
+  box-shadow: none;
+}
+
+.upload-button.cancel:hover {
+  background: #cbd5e0;
+  box-shadow: none;
+}

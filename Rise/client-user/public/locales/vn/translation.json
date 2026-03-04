@@ -1,0 +1,90 @@
+{
+  "header": {
+    "search": {
+      "placeholder": "Tìm kiếm",
+      "imageSearch": "Tìm kiếm bằng hình ảnh",
+      "button": "Tìm kiếm"
+    },
+    "utils": {
+      "languageLabel": "Ngôn ngữ:",
+      "languageValue": "Tiếng Việt",
+      "cart": "Giỏ hàng",
+      "login": "Đăng nhập",
+      "signup": "Đăng ký"
+    },
+    "nav": {
+      "allCategories": "Tất cả danh mục",
+      "featuredSelection": "Lựa chọn nổi bật",
+      "tradeAssurance": "Đảm bảo giao dịch",
+      "buyerCentral": "Trung tâm người mua",
+      "helpCenter": "Trung tâm trợ giúp",
+      "appAndPlatform": "Ứng dụng & Chương trình nền tảng",
+      "sellOn": "Bán hàng trên RISE AUTOPARTS"
+    },
+    "tabs": {
+      "aiMode": "Chế độ AI",
+      "products": "Sản phẩm",
+      "manufacturers": "Nhà sản xuất",
+      "worldwide": "Toàn cầu"
+    }
+  },
+  "login": {
+    "title": "Đăng nhập",
+    "subtitle": "Trung tâm mua sắm B2B C-parts",
+    "userId": "Tên đăng nhập",
+    "userIdPlaceholder": "Nhập tên đăng nhập",
+    "password": "Mật khẩu",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "loginButton": "Đăng nhập",
+    "loggingIn": "Đang đăng nhập...",
+    "noAccount": "Chưa có tài khoản?",
+    "signupLink": "Đăng ký",
+    "loginSuccess": "Đăng nhập thành công!",
+    "loginFail": "Đăng nhập thất bại."
+  },
+  "signup": {
+    "title": "Đăng ký",
+    "subtitle": "Đăng ký tài khoản B2B",
+    "id": "Tên đăng nhập",
+    "name": "Họ và tên",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "company": "Tên công ty",
+    "phone": "Số điện thoại",
+    "namePlaceholder": "Nguyễn Văn A",
+    "passwordPlaceholder": "8+ ký tự, gồm chữ và số",
+    "confirmPasswordPlaceholder": "Nhập lại mật khẩu",
+    "companyPlaceholder": "Tên công ty",
+    "signupButton": "Đăng ký",
+    "hasAccount": "Đã có tài khoản?",
+    "loginLink": "Đăng nhập",
+    "errors": {
+      "idLength": "Tên đăng nhập phải có ít nhất 4 ký tự.",
+      "emailFormat": "Định dạng email không hợp lệ.",
+      "passwordLength": "Mật khẩu phải có ít nhất 8 ký tự.",
+      "passwordMismatch": "Mật khẩu không khớp."
+    }
+  },
+  "footer": {
+    "customerService": {
+      "title": "Dịch vụ khách hàng",
+      "helpCenter": "Trung tâm trợ giúp",
+      "disputeResolution": "Giải quyết tranh chấp",
+      "contactSeller": "Liên hệ người bán",
+      "policyAndRules": "Chính sách & Quy tắc"
+    },
+    "about": {
+      "title": "Giới thiệu",
+      "aboutUs": "Về RISE AUTOPARTS",
+      "careers": "Tuyển dụng",
+      "blog": "Blog"
+    },
+    "sell": {
+      "title": "Bán hàng",
+      "sellOnRISE AUTOPARTS": "Bán trên RISE AUTOPARTS",
+      "successStories": "Câu chuyện thành công"
+    },
+    "copyright": "All rights reserved."
+  }
+}

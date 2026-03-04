@@ -1,0 +1,58 @@
+.product-section {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.product-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.product-section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.product-section-view-more {
+  font-size: 16px;
+  color: var(--text-color, #4682b4);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.product-section-view-more:hover {
+  text-decoration: underline;
+}
+
+.product-section-grid {
+  display: grid;
+  /* 데스크톱에서 6개 컬럼으로 설정하여 2줄로 표시 (총 12개 아이템) */
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+/* 반응형 대응 */
+@media (max-width: 1200px) {
+  .product-section-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-section {
+    padding: 20px 0;
+  }
+  .product-section-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .product-section-title {
+    font-size: 20px;
+  }
+}

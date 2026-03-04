@@ -1,0 +1,20 @@
+{
+  "name": "b2b-c-parts-root",
+  "version": "1.0.0",
+  "description": "B2B Project Root Controller",
+  "main": "index.js",
+  "scripts": {
+    "dev:server": "npm run dev --prefix Rise/server",
+    "dev:user": "npm run dev --prefix Rise/client-user",
+    "dev:admin": "npm run dev --prefix Rise/client-admin",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:user\" \"npm run dev:admin\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

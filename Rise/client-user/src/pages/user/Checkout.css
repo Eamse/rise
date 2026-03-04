@@ -1,0 +1,154 @@
+/* ── 전체 페이지 ── */
+.checkout-container {
+  display: flex;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 240px auto 60px;
+  padding: 0 20px;
+  align-items: flex-start;
+}
+
+/* ── 왼쪽: 배송지 폼 ── */
+.checkout-form {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 32px;
+}
+
+.checkout-form h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a233a;
+  margin: 0 0 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f4f8;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1.5px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a202c;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.checkout-form input::placeholder,
+.checkout-form textarea::placeholder {
+  color: #a0aec0;
+}
+
+.checkout-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* ── 오른쪽: 주문 요약 ── */
+.checkout-summary {
+  width: 360px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 32px;
+  position: sticky;
+  top: 88px;
+}
+
+.checkout-summary h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a233a;
+  margin: 0 0 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f4f8;
+}
+
+/* 상품 한 줄 */
+.checkout-summary > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f4f8;
+  gap: 8px;
+}
+
+.checkout-summary > div span:first-child {
+  flex: 1;
+  font-size: 13px;
+  color: #2d3748;
+  font-weight: 500;
+  /* 긴 이름은 말줄임 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.checkout-summary > div span:nth-child(2) {
+  font-size: 13px;
+  color: #7a8c9e;
+  min-width: 36px;
+  text-align: center;
+}
+
+.checkout-summary > div span:last-child {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a233a;
+  text-align: right;
+}
+
+/* 총 금액 */
+.checkout-summary > p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a233a;
+  padding-top: 16px;
+  border-top: 2px solid #e8edf2;
+}
+
+/* 주문 버튼 */
+.checkout-summary button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #3498db, #1a7bc8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  font-family: inherit;
+}
+
+.checkout-summary button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.checkout-summary button:active {
+  transform: translateY(0);
+}

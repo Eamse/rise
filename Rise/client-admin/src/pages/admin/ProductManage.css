@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+/* 페이지 전체 */
+.manage-page {
+  padding: 32px;
+}
+
+/* 상단 타이틀 + 검색 영역 */
+.manage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.manage-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a233a;
+  margin: 0;
+}
+
+/* 상품 수 뱃지 */
+.manage-count {
+  font-size: 13px;
+  color: white;
+  background: #044f9b;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* 테이블 감싸는 카드 */
+.manage-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* 테이블 기본 */
+.manage-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* 헤더 행 */
+.manage-table thead tr {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.manage-table th {
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 13px;
+}
+
+/* 데이터 행 */
+.manage-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.manage-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.manage-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.manage-table td {
+  padding: 14px 16px;
+  color: #2b3643;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* 상품 이미지 썸네일 */
+.product-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.no-image {
+  width: 48px;
+  height: 48px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #b0bec5;
+}
+
+/* 가격 강조 */
+.price-cell {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* 삭제 버튼 */
+.delete-button {
+  padding: 6px 14px;
+  background: #fff;
+  color: #e53e3e;
+  border: 1.5px solid #e53e3e;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.delete-button:hover {
+  background: #e53e3e;
+  color: #fff;
+}
+
+.delete-button.show {
+  width: 90px;
+  margin-right: 10px;
+}
+
+/* 수정 버튼 */
+.edit-button {
+  padding: 6px 14px;
+  background: #fff;
+  color: #069a5c;
+  border: 1.5px solid #83e9be;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-button:hover {
+  background: #83e9be;
+  color: #fff;
+}
+
+/* 유틸리티 */
+.text-center {
+  text-align: center !important;
+}
+
+/* 정렬 맞춤을 위한 셀 고정 너비 및 중앙 정렬 */
+.manage-table th.text-center,
+.manage-table td.text-center {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* 버튼 크기 통일 */
+.delete-button,
+.edit-button {
+  width: 54px; /* 너비 고정 */
+  padding: 5px 0; /* 높이 통일 */
+  display: inline-block;
+  line-height: normal;
+  margin: 0 auto;
+}
+
+/* 데이터 없을 때 */
+.manage-empty {
+  text-align: center;
+  padding: 60px 0;
+  color: #b0bec5;
+  font-size: 15px;
+}
