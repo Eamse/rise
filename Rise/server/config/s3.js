@@ -28,7 +28,7 @@ if (R2_PUBLIC_URL) {
   R2_PUBLIC_URL = R2_PUBLIC_URL.replace(/\/$/, "");
 }
 
-// [디버깅] 설정 상태 로그
+// [디버깅]
 console.log("🔧 [R2 설정 확인]");
 console.log(`   - Bucket: ${R2_BUCKET_NAME || "❌ 누락됨"}`);
 console.log(`   - Base URL: ${R2_PUBLIC_URL || "❌ 누락됨"}`);
