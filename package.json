@@ -16,5 +16,8 @@
   "type": "commonjs",
   "devDependencies": {
     "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1002.0"
   }
 }

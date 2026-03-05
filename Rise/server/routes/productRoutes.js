@@ -1,8 +1,9 @@
+import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { PrismaClient } from "@prisma/client";
 import express from "express";
 import multer from "multer";
-import path from "path";
 import sharp from "sharp";
+import { s3Client } from "../config/s3.js";
 import { adminAuthMiddleware } from "../middleware/adminAuth.js";
 
 const router = express.Router();
@@ -51,13 +52,21 @@ router.post(
         const urls = await Promise.all(
           req.files["image"].map(async (file) => {
             const fileName = `product_${Date.now()}_${Math.floor(Math.random() * 1000)}.webp`;
-            const outputPath = path.join(process.cwd(), "uploads", fileName);
-            await sharp(file.buffer)
+            const processedBuffer = await sharp(file.buffer)
               .rotate()
               .resize({ width: 800, withoutEnlargement: true })
               .webp({ quality: 80 })
-              .toFile(outputPath);
-            return `/uploads/${fileName}`;
+              .toBuffer();
+
+            await s3Client.send(
+              new PutObjectCommand({
+                Bucket: process.env.R2_BUCKET_NAME,
+                Key: `products/${fileName}`,
+                body: processedBuffer,
+                ContentType: "image/webp",
+              }),
+            );
+            return `${process.env.R2_PUBLIC_BASE_URL}/products/${fileName}`;
           }),
         );
         imageUrl = JSON.stringify(urls);
@@ -68,13 +77,21 @@ router.post(
         const urls = await Promise.all(
           req.files["detailImage"].map(async (file) => {
             const fileName = `detail_${Date.now()}_${Math.floor(Math.random() * 1000)}.webp`;
-            const outputPath = path.join(process.cwd(), "uploads", fileName);
-            await sharp(file.buffer)
+            const processedBuffer = await sharp(file.buffer)
               .rotate()
               .resize({ width: 800, withoutEnlargement: true })
               .webp({ quality: 80 })
-              .toFile(outputPath);
-            return `/uploads/${fileName}`;
+              .toBuffer();
+
+            await s3Client.send(
+              new PutObjectCommand({
+                Bucket: process.env.R2_BUCKET_NAME,
+                Key: `products/${fileName}`,
+                body: processedBuffer,
+                ContentType: "image/webp",
+              }),
+            );
+            return `${process.env.R2_PUBLIC_BASE_URL}/products/${fileName}`;
           }),
         );
         detailImageUrls = JSON.stringify(urls);
@@ -175,13 +192,21 @@ router.put(
         const urls = await Promise.all(
           req.files["image"].map(async (file) => {
             const fileName = `product_${Date.now()}_${Math.floor(Math.random() * 1000)}.webp`;
-            const outputPath = path.join(process.cwd(), "uploads", fileName);
-            await sharp(file.buffer)
+            const processedBuffer = await sharp(file.buffer)
               .rotate()
               .resize({ width: 800, withoutEnlargement: true })
               .webp({ quality: 80 })
-              .toFile(outputPath);
-            return `/uploads/${fileName}`;
+              .toBuffer();
+
+            await s3Client.send(
+              new PutObjectCommand({
+                Bucket: process.env.R2_BUCKET_NAME,
+                Key: `products/${fileName}`,
+                Body: processedBuffer,
+                ContentType: "image/webp",
+              }),
+            );
+            return `${process.env.R2_PUBLIC_BASE_URL}/products/${fileName}`;
           }),
         );
         imageUrl = JSON.stringify(urls);
@@ -192,13 +217,21 @@ router.put(
         const urls = await Promise.all(
           req.files["detailImage"].map(async (file) => {
             const fileName = `detail_${Date.now()}_${Math.floor(Math.random() * 1000)}.webp`;
-            const outputPath = path.join(process.cwd(), "uploads", fileName);
-            await sharp(file.buffer)
+            const processedBuffer = await sharp(file.buffer)
               .rotate()
               .resize({ width: 800, withoutEnlargement: true })
               .webp({ quality: 80 })
-              .toFile(outputPath);
-            return `/uploads/${fileName}`;
+              .toBuffer();
+
+            await s3Client.send(
+              new PutObjectCommand({
+                Bucket: process.env.R2_BUCKET_NAME,
+                Key: `products/${fileName}`,
+                Body: processedBuffer,
+                ContentType: "image/webp",
+              }),
+            );
+            return `${process.env.R2_PUBLIC_BASE_URL}/products/${fileName}`;
           }),
         );
         detailImageUrls = JSON.stringify(urls);
