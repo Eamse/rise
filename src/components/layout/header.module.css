@@ -67,9 +67,121 @@
   color: #00d4b8;
 }
 
+.toggle {
+  display: none;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.toggle:hover {
+  color: #00d4b8;
+}
+
 /* 반응형: 좁은 화면에선 메뉴 숨기기 */
 @media screen and (max-width: 958px) {
   .navList {
     display: none;
   }
+
+  .toggle {
+    display: block;
+  }
+}
+
+/* =========================================
+   모바일 사이드 슬라이드 메뉴 스타일 영역
+   ========================================= */
+
+/* 어두운 반투명 배경 (메뉴 열렸을 때 바탕) */
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+/* 메뉴 열림 상태 공통 클래스 */
+.mobileMenuOverlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 우측에서 튀어나오는 메뉴 패널 */
+.mobileMenuPanel {
+  position: fixed;
+  top: 0;
+  right: -100%; /* 처음엔 화면 우측 바깥에 숨겨둠 */
+  width: 300px;
+  max-width: 80vw;
+  height: 100vh;
+  background-color: #0d121c; /* 딥 네이비 배경 */
+  border-left: 1px solid rgba(0, 255, 234, 0.2);
+  z-index: 999;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileMenuPanel.open {
+  right: 0; /* 열리면 화면 안으로 들어옴 */
+}
+
+/* 모바일 메뉴 상단 헤더 (로고 & 닫기버튼) */
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.closeIcon {
+  color: white;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.closeIcon:hover {
+  color: #00ffea;
+  transform: rotate(90deg);
+}
+
+/* 모바일 링크 리스트 */
+.mobileNavList {
+  list-style: none;
+  padding: 2rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobileNavLink {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.mobileNavLink:hover {
+  color: #00d4b8;
+  transform: translateX(10px); /* 호버 시 살짝 우측으로 밀리는 애니메이션 */
 }

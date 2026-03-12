@@ -421,6 +421,13 @@
   align-items: center;
 }
 
+/* 새로 추가! 노드 요소 절대 분리 방지 장치 (점 + 콘텐츠) */
+.stepNode {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* 화면이 줄어들어도 점이나 글씨가 찌그러지거나 분리되지 않도록 잠금 */
+}
+
 /* 빛나는 틸 색 점 */
 .dot {
   width: 7px;
