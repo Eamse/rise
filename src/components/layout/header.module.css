@@ -1,0 +1,75 @@
+/* 헤더 전체 컨테이너 */
+.header {
+  position: fixed; /* 스크롤해도 상단에 늘 고정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0a0a0a; /* 진한 검정 배경 */
+  border-bottom: 1px solid #222;
+}
+
+/* 로고 링크 래퍼 */
+.logoWrapper {
+  font-size: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* 로고 텍스트 메인 */
+.logoText {
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: white;
+}
+
+/* 로고의 강조 색상 (teal/민트) */
+.logoAccent {
+  color: #00d4b8;
+}
+
+/* 네비게이션 영역 */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* 메뉴 리스트 */
+.navList {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 메뉴 링크 */
+.navLink {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* 호버: 빨간색 → 민트/틸 색으로 변경 */
+.navLink:hover {
+  color: #00d4b8;
+}
+
+/* 반응형: 좁은 화면에선 메뉴 숨기기 */
+@media screen and (max-width: 958px) {
+  .navList {
+    display: none;
+  }
+}

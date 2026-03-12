@@ -1,0 +1,33 @@
+.window {
+  width: 100%;
+  /* max-width: 1500px; 안 쓸거임 */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.train {
+  display: flex;
+  width: max-content;
+  animation: scrollLeft 15s linear infinite;
+}
+
+.slide {
+  width: 250px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  flex-shrink: 0;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
