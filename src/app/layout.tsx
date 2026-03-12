@@ -1,4 +1,5 @@
 import Header from "@/components/layout/header";
+import SideBar from "@/components/sideBar";
 import type { Metadata } from "next";
 import styles from "./layout.module.css";
 
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={styles.body}>
         <Header />
+        <SideBar />
         <main className={styles.main}>{children}</main>
       </body>
     </html>

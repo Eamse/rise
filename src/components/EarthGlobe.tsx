@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Globe from "react-globe.gl";
 
 export default function EarthGlobe() {
-  const globeRef = useRef<any>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const globeRef = useRef<any>(null);
   const [globeSize, setGlobeSize] = useState(800);
 
   useEffect(() => {
@@ -130,7 +131,7 @@ export default function EarthGlobe() {
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
         // 날아가는 궤적 (Arcs)
         arcsData={arcsData}
-        arcColor={(d: any) => d.color}
+        arcColor={(d: object) => (d as { color: string | string[] }).color}
         arcDashLength={0.5}
         arcDashGap={0.2}
         arcDashAnimateTime={2500}
@@ -138,7 +139,7 @@ export default function EarthGlobe() {
         arcStroke={0.5}
         // 지상 레이더 펄스 (Rings)
         ringsData={ringsData}
-        ringColor={(d: any) => d.color}
+        ringColor={(d: object) => (d as { color: string }).color}
         ringMaxRadius="maxR"
         ringPropagationSpeed="propagationSpeed"
         ringRepeatPeriod="repeatPeriod"
