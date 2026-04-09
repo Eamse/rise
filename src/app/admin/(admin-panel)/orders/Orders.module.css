@@ -1,0 +1,285 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: #687990;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid #e5ecf4;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchForm label {
+  font-size: 13px;
+  color: #5b6b82;
+}
+
+.searchForm input {
+  height: 36px;
+  border: 1px solid #cfd9e6;
+  border-radius: 8px;
+  padding: 0 10px;
+}
+
+.searchForm button {
+  height: 36px;
+  border: 1px solid #27507e;
+  color: #fff;
+  background: #2d5f96;
+  border-radius: 8px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.statusFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.statusFilters button {
+  height: 32px;
+  border: 1px solid #cfdae8;
+  border-radius: 16px;
+  background: #fff;
+  color: #42556f;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.activeFilter {
+  border-color: #2e6aad !important;
+  background: #eef5ff !important;
+  color: #1f4f84 !important;
+}
+
+.errorBox {
+  margin: 0;
+  background: #fff0f0;
+  border: 1px solid #ffd0d0;
+  color: #a12d2d;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) minmax(420px, 1fr);
+  gap: 14px;
+}
+
+.listPanel,
+.detailPanel {
+  background: #fff;
+  border: 1px solid #e5ecf4;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.listPanel h3,
+.detailPanel h3 {
+  margin: 0 0 10px;
+}
+
+.placeholder {
+  margin: 0;
+  color: #7a8ca4;
+}
+
+.orderList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.orderItem {
+  border: 1px solid #dbe5f2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.orderItem button {
+  width: 100%;
+  border: 0;
+  background: #fff;
+  text-align: left;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.orderItem button p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #586b84;
+}
+
+.selectedOrder {
+  border-color: #3872ad;
+  box-shadow: 0 0 0 1px #3872ad inset;
+}
+
+.orderTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.badge {
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 3px 8px;
+  border: 1px solid transparent;
+}
+
+.default {
+  color: #41536d;
+  background: #edf2f8;
+}
+
+.warn {
+  color: #8b5d00;
+  background: #fff3d8;
+}
+
+.info {
+  color: #0f5579;
+  background: #dff4ff;
+}
+
+.success {
+  color: #1e6a42;
+  background: #e4f9ee;
+}
+
+.danger {
+  color: #a22e2e;
+  background: #ffe3e3;
+}
+
+.section {
+  border: 1px solid #e8eff7;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.section h4 {
+  margin: 0 0 10px;
+}
+
+.section dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.section dt {
+  color: #6f8198;
+  font-size: 12px;
+}
+
+.section dd {
+  margin: 4px 0 0;
+  color: #233146;
+  font-size: 14px;
+}
+
+.itemList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.itemList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e7edf5;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.itemList span {
+  color: #5d6f88;
+  font-size: 13px;
+}
+
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actionButtons button {
+  border: 1px solid #ccd8e7;
+  background: #fff;
+  border-radius: 8px;
+  height: 34px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.rejectButton {
+  color: #a12a2a;
+  border-color: #f0c7c7 !important;
+  background: #fff5f5 !important;
+}
+
+.section textarea {
+  width: 100%;
+  min-height: 74px;
+  resize: vertical;
+  border: 1px solid #cfdae8;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.refundReason {
+  margin: 8px 0 6px;
+  color: #5a6d86;
+  font-size: 13px;
+}
+
+@media (max-width: 1160px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .section dl {
+    grid-template-columns: 1fr;
+  }
+}
+

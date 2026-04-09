@@ -1,0 +1,141 @@
+/* ========== 검색기능 ========== */
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  max-width: 900px;
+  border: 3px solid var(--borderline-color, #e8e8e8);
+  border-radius: 22px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 16px;
+  gap: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-box input {
+  flex-grow: 1;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box button {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    var(--primary-color, #d0021b),
+    var(--primary-gradient-end, #ff4d4f)
+  );
+  color: white;
+  border: none;
+  padding: 0 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.search-box button:hover {
+  background: linear-gradient(
+    to right,
+    var(--primary-gradient-end, #ff4d4f),
+    var(--borderline-color, #e8e8e8)
+  );
+}
+
+.searchicon {
+  margin-right: 5px;
+}
+
+.img-and-search {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-text-box {
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.img-search-text {
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.search.compact {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.search.compact .search-box {
+  height: 38px;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 4px 0 16px;
+  border-radius: 40px;
+  background-color: #fff;
+  border: 1px solid #7eb6ea;
+  box-shadow: none;
+  gap: 0;
+}
+
+.search.compact .search-box input {
+  height: 100%;
+  font-size: 14px;
+}
+
+.search.compact .img-text-box {
+  display: none;
+}
+
+.search.compact .search-icon button {
+  height: 30px;
+  padding: 0 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  background: linear-gradient(90deg, #7eb6ea, #6a96e6);
+}
+
+.search.compact .searchicon svg {
+  width: 14px;
+  height: 14px;
+}
+
+@media (max-width: 768px) {
+  .search.compact {
+    margin: 0 8px;
+    max-width: none;
+  }
+
+  .search.compact .search-box {
+    height: 34px;
+    padding: 0 4px 0 12px;
+  }
+
+  .search.compact .search-box input {
+    font-size: 13px;
+  }
+
+  .search.compact .search-icon button {
+    height: 28px;
+    padding: 0 11px;
+    font-size: 12px;
+  }
+}

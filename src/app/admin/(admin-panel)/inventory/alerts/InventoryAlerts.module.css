@@ -1,0 +1,112 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: #6f8199;
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e3ebf4;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.filterRow label {
+  color: #566984;
+  font-size: 13px;
+}
+
+.filterRow input {
+  width: 120px;
+  height: 34px;
+  border: 1px solid #c8d5e5;
+  border-radius: 8px;
+  padding: 0 9px;
+}
+
+.filterRow button {
+  height: 34px;
+  border: 1px solid #2c5e93;
+  background: #336ba6;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.summaryBox {
+  background: #fff;
+  border: 1px solid #e3ebf4;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #2f415c;
+}
+
+.errorBox {
+  margin: 0;
+  background: #fff1f1;
+  border: 1px solid #ffd3d3;
+  color: #9d2d2d;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.placeholder {
+  margin: 0;
+  color: #6f829b;
+}
+
+.tableWrap {
+  background: #fff;
+  border: 1px solid #e3ebf4;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #edf2f8;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.table th {
+  background: #f8fbff;
+  color: #4f637f;
+}
+
+.stockCell {
+  color: #a33434;
+  font-weight: 700;
+}
+
+.editLink {
+  border: 1px solid #c6d7eb;
+  color: #295783;
+  text-decoration: none;
+  background: #f1f7ff;
+  border-radius: 7px;
+  padding: 6px 9px;
+  font-size: 12px;
+}
+

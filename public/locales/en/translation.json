@@ -1,0 +1,90 @@
+{
+  "header": {
+    "search": {
+      "placeholder": "Search",
+      "imageSearch": "Search by Image",
+      "button": "Search"
+    },
+    "utils": {
+      "languageLabel": "Language:",
+      "languageValue": "English",
+      "cart": "Cart",
+      "login": "Sign In",
+      "signup": "Join Free"
+    },
+    "nav": {
+      "allCategories": "All Categories",
+      "featuredSelection": "Featured Selection",
+      "tradeAssurance": "Trade Assurance",
+      "brands": "Brands",
+      "inquiry": "Inquiry",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "tabs": {
+      "aiMode": "AI Mode",
+      "products": "Products",
+      "manufacturers": "Manufacturers",
+      "worldwide": "Worldwide"
+    }
+  },
+  "login": {
+    "title": "Sign In",
+    "subtitle": "B2C C-parts Mall",
+    "userId": "User ID",
+    "userIdPlaceholder": "Enter your user ID",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "loginButton": "Sign In",
+    "loggingIn": "Signing in...",
+    "noAccount": "Don't have an account?",
+    "signupLink": "Join Free",
+    "loginSuccess": "Login successful!",
+    "loginFail": "Login failed."
+  },
+  "signup": {
+    "title": "Join Free",
+    "subtitle": "B2C Mall Registration",
+    "id": "User ID",
+    "name": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "company": "Company Name",
+    "phone": "Phone Number",
+    "namePlaceholder": "John Doe",
+    "passwordPlaceholder": "8+ characters, letters & numbers",
+    "confirmPasswordPlaceholder": "Re-enter your password",
+    "companyPlaceholder": "Company Name",
+    "signupButton": "Register",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Sign In",
+    "errors": {
+      "idLength": "User ID must be at least 4 characters.",
+      "emailFormat": "Invalid email format.",
+      "passwordLength": "Password must be at least 8 characters.",
+      "passwordMismatch": "Passwords do not match."
+    }
+  },
+  "footer": {
+    "customerService": {
+      "title": "Customer Service",
+      "helpCenter": "Help Center",
+      "disputeResolution": "Dispute Resolution",
+      "contactSeller": "Contact Seller",
+      "policyAndRules": "Policies & Rules"
+    },
+    "about": {
+      "title": "About Us",
+      "aboutUs": "About RISE AUTOPARTS",
+      "careers": "Careers",
+      "blog": "Blog"
+    },
+    "sell": {
+      "title": "Sell on RISE AUTOPARTS",
+      "sellOnRISE AUTOPARTS": "Start Selling",
+      "successStories": "Success Stories"
+    },
+    "copyright": "All rights reserved."
+  }
+}

@@ -1,0 +1,221 @@
+.mainContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  padding: calc(var(--header-height, 240px) + 24px) 24px 24px;
+}
+
+.mainContents {
+  display: flex;
+  justify-content: center;
+  background-color: #f7f8fa;
+  padding: 180px 24px 24px;
+}
+
+.heroCategorySection {
+  width: 100%;
+  max-width: 1800px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.heroCard {
+  position: relative;
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s ease;
+  background: white;
+}
+
+.heroCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.heroCardBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+}
+
+.heroCard:hover .heroCardBg {
+  transform: scale(1.05);
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.1) 60%
+  );
+  z-index: 1;
+}
+
+.heroCardContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.heroTextWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroCatName {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.heroCatDesc {
+  font-size: 15px;
+  color: #e2e8f0;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.heroCatBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heroCatBtn span {
+  transition: transform 0.3s ease;
+}
+
+.heroCard:hover .heroCatBtn span {
+  transform: translateX(6px);
+}
+
+.heroScrollHint {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .heroScrollHint {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    font-size: 13px;
+    color: #8e9aaf;
+    margin-bottom: 8px;
+    font-weight: 600;
+    padding-right: 4px;
+  }
+
+  .heroScrollHint span {
+    display: inline-block;
+    animation: slideRight 1.5s infinite ease-in-out;
+  }
+
+  @keyframes slideRight {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+  }
+
+  .heroGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px 4px 30px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .heroGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .heroCard {
+    flex: 0 0 85%;
+    height: 380px;
+    scroll-snap-align: center;
+  }
+
+  .heroCardContent {
+    padding: 30px;
+  }
+
+  .heroCatName {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .heroCatDesc {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 657px) {
+  .mainContentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    padding-top: 100px;
+  }
+}
+@media (max-width: 640px) {
+  .heroCard {
+    flex: 0 0 90%;
+    height: 320px;
+  }
+
+  .heroCardContent {
+    padding: 24px;
+  }
+
+  .heroCatName {
+    font-size: 20px;
+  }
+
+  .heroCatDesc {
+    display: none;
+  }
+}

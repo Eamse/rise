@@ -1,0 +1,90 @@
+{
+  "header": {
+    "search": {
+      "placeholder": "검색",
+      "imageSearch": "이미지로 검색",
+      "button": "검색"
+    },
+    "utils": {
+      "languageLabel": "언어선택:",
+      "languageValue": "한국어",
+      "cart": "장바구니",
+      "login": "로그인",
+      "signup": "회원가입"
+    },
+    "nav": {
+      "allCategories": "모든 카테고리",
+      "featuredSelection": "인기 특가",
+      "topranking": "Top 랭킹",
+      "brands": "브랜드",
+      "inquiry": "문의하기",
+      "about": "회사소개",
+      "faq": "공지사항"
+    },
+    "tabs": {
+      "aiMode": "AI 모드",
+      "products": "제품",
+      "manufacturers": "제조업체",
+      "worldwide": "전 세계"
+    }
+  },
+  "login": {
+    "title": "로그인",
+    "subtitle": "B2C C-parts 쇼핑몰",
+    "userId": "아이디",
+    "userIdPlaceholder": "아이디를 입력하세요",
+    "password": "비밀번호",
+    "passwordPlaceholder": "비밀번호를 입력하세요",
+    "loginButton": "로그인",
+    "loggingIn": "로그인 중...",
+    "noAccount": "계정이 없으신가요?",
+    "signupLink": "회원가입",
+    "loginSuccess": "로그인 성공!",
+    "loginFail": "로그인에 실패했습니다."
+  },
+  "signup": {
+    "title": "회원가입",
+    "subtitle": "B2C 쇼핑몰 회원가입",
+    "id": "아이디",
+    "name": "이름",
+    "email": "이메일",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "company": "회사명",
+    "phone": "전화번호",
+    "namePlaceholder": "홍길동",
+    "passwordPlaceholder": "8자 이상, 영문+숫자 포함",
+    "confirmPasswordPlaceholder": "비밀번호를 다시 입력하세요",
+    "companyPlaceholder": "회사명",
+    "signupButton": "회원가입",
+    "hasAccount": "이미 계정이 있으신가요?",
+    "loginLink": "로그인",
+    "errors": {
+      "idLength": "아이디는 4자리 이상이여야 합니다.",
+      "emailFormat": "이메일 형식이 올바르지 않습니다.",
+      "passwordLength": "비밀번호는 8자리 이상이여야 합니다.",
+      "passwordMismatch": "비밀번호가 일치하지 않습니다."
+    }
+  },
+  "footer": {
+    "customerService": {
+      "title": "고객 서비스",
+      "helpCenter": "도움말 센터",
+      "disputeResolution": "분쟁 해결",
+      "contactSeller": "판매자에게 문의",
+      "policyAndRules": "정책 및 규칙"
+    },
+    "about": {
+      "title": "회사 소개",
+      "aboutUs": "RISE AUTOPARTS 소개",
+      "careers": "채용",
+      "blog": "블로그"
+    },
+    "sell": {
+      "title": "판매하기",
+      "sellOnRISE AUTOPARTS": "RISE AUTOPARTS에서 판매",
+      "successStories": "성공 사례"
+    },
+    "copyright": "All rights reserved."
+  }
+}

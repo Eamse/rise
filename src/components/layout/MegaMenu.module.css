@@ -1,0 +1,250 @@
+.megaDropdown {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  width: 100%;
+  animation: fadeInDropdown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-top: 1px solid #f0f0f0;
+}
+
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.megaMenuContainer {
+  display: flex;
+  max-width: 1800px;
+  max-height: 500px;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+.mobileNavLinks {
+  display: none;
+}
+
+.mobileHeaderLeft {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+/* ━━━ Sidebar ━━━ */
+.categorySidebar {
+  width: 280px;
+  padding: 24px 12px;
+  flex-shrink: 0;
+  border-right: 1px solid #f1f3f5;
+  background-color: #f8f9fa;
+  height: auto;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.categoryItem {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #495057;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  gap: 12px;
+}
+
+.categoryItem.active {
+  background-color: #fff;
+  color: #004ecc;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.categoryIcon {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ━━━ Panel & Grid ━━━ */
+.subcategoryPanel {
+  flex: 1;
+  padding: 24px 32px;
+  background-color: white;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.subcategoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.subcategoryHeader h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #212529;
+}
+
+.subcategoryGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px 16px;
+}
+
+.subcategoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.subcategoryCard:active {
+  transform: scale(0.95);
+}
+
+.subcategoryImage {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #f1f3f5;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.subcategoryName {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #495057;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .megaDropdown {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 70px;
+    z-index: 10001;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+
+  /* Title & Shortcuts */
+  .mobileHeader {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f1f3f5;
+  }
+
+  .mobileHeader h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .closeBtn {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  /* Main Area Split */
+
+  .megaMenuContainer {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .categorySidebar {
+    width: 105px;
+    padding: 0;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .categoryItem {
+    flex-direction: column;
+    padding: 16px 10px;
+    gap: 4px;
+    border-radius: 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+  }
+
+  .categoryIcon {
+    display: none;
+  }
+
+  .mobileNavLinks {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 18px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobileNavLink {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 4px;
+    font-size: 11px;
+    line-height: 1.2;
+    color: #495057;
+    text-decoration: none;
+    /* border: 1px solid #dee2e6; */
+  }
+
+  .mobileNavLink:active {
+    background: #e9ecef;
+  }
+
+  .subcategoryPanel {
+    padding: 20px 16px;
+    max-height: none;
+  }
+
+  .subcategoryGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 8px;
+  }
+}

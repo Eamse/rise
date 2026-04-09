@@ -1,0 +1,249 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// datasource db {
+//  provider = "sqlite"
+//  url      = "file:./dev.db"
+// }
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  PREPARING
+  SHIPPED
+  DELIVERED
+  CANCELED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  PENDING
+  APPROVED
+  FAILED
+  CANCELED
+  REFUNDED
+}
+
+enum RefundStatus {
+  REQUESTED
+  APPROVED
+  REJECTED
+}
+
+enum ShipmentStatus {
+  READY
+  SHIPPED
+  IN_TRANSIT
+  DELIVERED
+  FAILED
+}
+
+// ==========================================
+// User 테이블 (회원가입용)
+// ==========================================
+model User {
+  id             Int             @id @default(autoincrement())
+  userId         String          @unique
+  email          String          @unique
+  password       String
+  name           String
+  phone          String          @default("")
+  profileImage   String?
+  createdAt      DateTime        @default(now())
+  CartItem       CartItem[]
+  Order          Order[]
+  addresses      Address[]
+  paymentMethods PaymentMethod[]
+}
+
+// ==========================================
+// Product 테이블 (상품 관리)
+// ==========================================
+model Product {
+  id              Int        @id @default(autoincrement()) // 자동 증가 번호
+  name            String // 상품명
+  category        String // 카테고리
+  subcategory     String // 서브카테고리
+  price           Int // 가격
+  description     String // 상품 설명
+  stock           Int        @default(0) // 재고 (기본값 0)
+  createdAt       DateTime   @default(now()) // 등록일 (자동 생성)
+  minorder        Int        @default(0) // 최소 주문
+  badge           String? // 뱃지 (예: "HOT_DEAL", "TOP_RANKING")
+  discountRate    Int        @default(0) // 할인율 (0~100)
+  imageUrl        String? // 상품 이미지 경로 (선택)
+  detailImageUrls String? // 상품 상세 이미지 경로 (선택)
+  CartItem        CartItem[]
+}
+
+// ==========================================
+// CartItem 테이블 (장바구니)
+// ==========================================
+model CartItem {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  productId Int
+  quantity  Int
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [userId])
+  product   Product  @relation(fields: [productId], references: [id])
+
+  @@unique([userId, productId])
+}
+
+// ==========================================
+// Admin 테이블 (관리자 전용 - User 테이블과 완전 분리)
+// ==========================================
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique // 관리자 아이디 (중복 불가)
+  password  String // bcrypt 암호화된 비밀번호
+  name      String // 관리자 표시명
+  createdAt DateTime @default(now())
+}
+
+// ==========================================
+// Order 테이블 (주문)
+// ==========================================
+model Order {
+  id         Int         @id @default(autoincrement())
+  userId     String // 주문자 아이디
+  status     OrderStatus @default(PENDING)
+  totalPrice Int // 총 결제 금액
+  receiver   String // 수령인 이름
+  phone      String // 연락처
+  address    String // 배송지 주소
+  memo       String? // 배송 메모 (선택)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  items      OrderItem[] // 주문 상품 목록
+  payment    Payment?
+  shipments  Shipment[]
+  user       User        @relation(fields: [userId], references: [userId])
+}
+
+// ==========================================
+// OrderItem 테이블 (주문 상품 스냅샷)
+// 나중에 상품 정보가 바뀌어도 주문 당시 가격/이름을 보존
+// ==========================================
+model OrderItem {
+  id          Int    @id @default(autoincrement())
+  orderId     Int
+  productId   Int
+  productName String // 주문 당시 상품명 스냅샷
+  price       Int // 주문 당시 단가 스냅샷
+  quantity    Int
+  order       Order  @relation(fields: [orderId], references: [id])
+}
+
+// ==========================================
+// Address 테이블 (배송지 관리)
+// ==========================================
+model Address {
+  id        Int     @id @default(autoincrement())
+  userId    String
+  name      String // 배송지 이름 (예: 집, 회사)
+  receiver  String // 수령인
+  phone     String // 연락처
+  postcode  String // 우편번호
+  address   String // 기본 주소
+  detail    String // 상세 주소
+  isDefault Boolean @default(false)
+  user      User    @relation(fields: [userId], references: [userId])
+}
+
+// ==========================================
+// PaymentMethod 테이블 (결제 수단)
+// ==========================================
+model PaymentMethod {
+  id             Int      @id @default(autoincrement())
+  userId         String
+  bank           String // 결제 제공 은행 (BPI | BDO)
+  cardBrand      String // 카드 브랜드 (VISA | MASTERCARD ...)
+  cardAlias      String? // 사용자 지정 이름
+  maskedCard     String // 마스킹 카드 번호 (예: ****-****-****-1234)
+  providerToken  String  @unique // 은행에서 받은 토큰(원문 카드번호 저장 금지)
+  isDefault      Boolean  @default(false)
+  isActive       Boolean  @default(true)
+  lastUsedAt     DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  user           User     @relation(fields: [userId], references: [userId])
+}
+
+model Payment {
+  id         Int           @id @default(autoincrement())
+  orderId    Int           @unique
+  provider   String
+  paymentKey String        @unique
+  status     PaymentStatus @default(PENDING)
+  amount     Int
+  approvedAt DateTime?
+  failedAt   DateTime?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+  order      Order         @relation(fields: [orderId], references: [id])
+  refunds    Refund[]
+}
+
+model PaymentWebhookEvent {
+  id           Int      @id @default(autoincrement())
+  eventId      String   @unique
+  eventType    String
+  provider     String?
+  orderId      Int?
+  paymentKey   String?
+  status       String
+  errorMessage String?
+  receivedAt   DateTime @default(now())
+  processedAt  DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Refund {
+  id          Int          @id @default(autoincrement())
+  paymentId   Int
+  reason      String
+  status      RefundStatus @default(REQUESTED)
+  amount      Int
+  requestedAt DateTime     @default(now())
+  approvedAt  DateTime?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  payment     Payment      @relation(fields: [paymentId], references: [id])
+}
+
+model Shipment {
+  id             Int             @id @default(autoincrement())
+  orderId        Int
+  carrier        String?
+  trackingNumber String?
+  status         ShipmentStatus  @default(READY)
+  shippedAt      DateTime?
+  deliveredAt    DateTime?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  order          Order           @relation(fields: [orderId], references: [id])
+  events         ShipmentEvent[]
+}
+
+model ShipmentEvent {
+  id         Int      @id @default(autoincrement())
+  shipmentId Int
+  statusCode String
+  statusText String
+  location   String?
+  occurredAt DateTime
+  createdAt  DateTime @default(now())
+  shipment   Shipment @relation(fields: [shipmentId], references: [id])
+}

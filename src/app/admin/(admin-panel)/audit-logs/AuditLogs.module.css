@@ -1,0 +1,66 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.header p {
+  margin: 8px 0 0;
+  color: #6d7f97;
+}
+
+.refreshButton {
+  align-self: flex-start;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #c7d3e2;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.errorBox {
+  margin: 0;
+  border: 1px solid #ffd3d3;
+  border-radius: 8px;
+  background: #fff3f3;
+  color: #952b2b;
+  padding: 10px 12px;
+}
+
+.placeholder {
+  margin: 0;
+  color: #74859c;
+}
+
+.tableWrap {
+  background: #fff;
+  border: 1px solid #e1e9f3;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #edf2f8;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.table th {
+  background: #f8fbff;
+  color: #4b5f7a;
+}
+

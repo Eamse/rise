@@ -1,0 +1,141 @@
+.managePage {
+  padding: 32px;
+}
+
+.manageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.manageTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a233a;
+  margin: 0;
+}
+
+.manageCount {
+  font-size: 13px;
+  color: white;
+  background: #044f9b;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.manageCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.manageTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.manageTable thead tr {
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.manageTable th {
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 13px;
+}
+
+.manageTable tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.manageTable tbody tr:hover {
+  background: #f8fbff;
+}
+
+.manageTable td {
+  padding: 14px 16px;
+  color: #2b3643;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.productThumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.noImage {
+  width: 48px;
+  height: 48px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #b0bec5;
+}
+
+.priceCell {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.deleteButton {
+  padding: 5px 0;
+  width: 54px;
+  background: #fff;
+  color: #e53e3e;
+  border: 1.5px solid #e53e3e;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.deleteButton:hover {
+  background: #e53e3e;
+  color: #fff;
+}
+
+.bulkDeleteButton {
+  width: auto;
+  padding: 6px 14px;
+  margin-right: 10px;
+}
+
+.editButton {
+  padding: 5px 0;
+  width: 54px;
+  background: #fff;
+  color: #069a5c;
+  border: 1.5px solid #83e9be;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.editButton:hover {
+  background: #83e9be;
+  color: #fff;
+}
+
+.manageEmpty {
+  text-align: center;
+  padding: 60px 0;
+  color: #b0bec5;
+  font-size: 15px;
+}

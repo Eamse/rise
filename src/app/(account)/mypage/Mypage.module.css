@@ -1,0 +1,481 @@
+.mypageContainer {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  max-width: 1200px;
+  /* margin: 40px auto; */ /* 이건 건들지 말기*/
+  gap: 40px;
+  padding: 240px 20px;
+}
+
+/* ━━━ Sidebar ━━━ */
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navLink {
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navLink:hover {
+  background-color: #f8f9fa;
+  color: var(--primary-color);
+}
+
+.navLinkActive {
+  background-color: rgba(0, 78, 204, 0.08);
+  color: var(--primary-color) !important;
+  font-weight: 700;
+}
+
+/* ━━━ Main Content Common ━━━ */
+.contentArea {
+  flex: 1;
+  min-width: 0;
+}
+
+.contentTitle {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.dateFilterBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.paymentForm {
+  margin-bottom: 28px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.paymentFormGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.actionBtnPrimarySolid {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.paymentMethodList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.paymentMethodCard {
+  padding: 18px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.paymentMethodTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.paymentMethodTop h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.paymentMethodMeta {
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 13px;
+}
+
+/* ━━━ Dashboard (Overview) ━━━ */
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f3f5;
+}
+
+.statLabel {
+  color: #888;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.statValuePrimary {
+  color: var(--primary-color);
+}
+
+.statValueAccent {
+  color: #fa5252;
+}
+
+.emptyState {
+  padding: 60px 40px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  border: 2px dashed #e9ecef;
+  color: #adb5bd;
+}
+
+/* ━━━ Profile Form ━━━ */
+.profileContainer {
+  max-width: 600px;
+}
+
+.avatarSection {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatarCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #f1f3f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #333;
+}
+
+.formInput {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  font-size: 15px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: var(--primary-color);
+}
+
+.formInputDisabled {
+  background-color: #f8f9fa;
+  color: #adb5bd;
+  cursor: not-allowed;
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: 32px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}
+
+/* ━━━ Shipping Address ━━━ */
+.shippingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.addBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.addressGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.addressCard {
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+
+.addressCardDefault {
+  border: 2px solid var(--primary-color);
+}
+
+.badgeDefault {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  background-color: #f1f3f5;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.addressName {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.addressPhone {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.addressText {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.addressActions {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actionBtn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #edeff2;
+  font-size: 13px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #555;
+}
+
+.actionBtnPrimary {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* ━━━ Orders List ━━━ */
+.orderList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.orderItemCard {
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #edeff2;
+  background-color: #fff;
+}
+
+.orderItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f3f5;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+.orderMeta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 13px;
+  color: #888;
+}
+
+.orderStatusText {
+  font-size: 14px;
+  font-weight: 800;
+  color: #555;
+}
+
+.statusHighlight {
+  color: var(--primary-color);
+}
+
+.orderProductInfo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.productThumb {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  flex-shrink: 0;
+}
+
+.productDetails {
+  flex: 1;
+}
+
+.productName {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.productPriceQty {
+  font-size: 14px;
+  color: #888;
+}
+
+.orderSideBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sideBtn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #edeff2;
+  font-size: 14px;
+  background-color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ━━━ Responsive ━━━ */
+@media (max-width: 900px) {
+  .mypageContainer {
+    flex-direction: column;
+    margin: 20px auto;
+    gap: 30px;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .sidebarNav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    gap: 4px;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .sidebarNav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navLink {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid #eee;
+  }
+
+  .addressGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .paymentFormGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .orderProductInfo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .orderSideBtns {
+    width: 100%;
+    flex-direction: row;
+    margin-top: 16px;
+  }
+
+  .sideBtn {
+    flex: 1;
+  }
+}

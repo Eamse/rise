@@ -1,0 +1,368 @@
+.globeLayout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f8ff 100%);
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+.processSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px;
+  overflow-x: auto;
+}
+
+/* Hide scrollbar for clean look */
+.processSection::-webkit-scrollbar {
+  display: none;
+}
+.processSection {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.processWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: max-content;
+  padding: 24px 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(135, 206, 235, 0.15);
+}
+
+.processGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+/* The glowing line entering from left */
+.lineConnect,
+.lineFadeInFirst {
+  height: 2px;
+  width: 50px;
+  background: linear-gradient(to right, transparent, var(--primary-color, #87ceeb));
+  box-shadow: 0 0 8px rgba(135, 206, 235, 0.4);
+}
+
+@media (min-width: 1024px) {
+  .lineConnect {
+    width: 80px;
+  }
+}
+
+.lineFadeInFirst {
+  /* The very first line might fade in smoothly from nothing */
+  background: linear-gradient(to right, transparent, var(--primary-color, #87ceeb));
+}
+
+/* The neon dot */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-color, #87ceeb);
+  box-shadow:
+    0 0 12px var(--primary-color, #87ceeb),
+    0 0 4px #fff;
+  margin-right: 16px;
+}
+
+.stepContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 20px; /* Space before the next line starts */
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  color: var(--primary-color, #87ceeb);
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.25);
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: translateY(-2px);
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 160px; /* Ensure text wraps tightly */
+}
+
+.stepLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 2px;
+}
+
+.stepTitle {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-color, #4682b4);
+}
+
+.stepDesc {
+  font-size: 12px;
+  color: #666666;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.airplaneIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  color: #ffffff;
+  background: var(--text-color, #4682b4);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(70, 130, 180, 0.3);
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.airplaneIcon:hover {
+  transform: scale(1.05);
+}
+
+.globeHeader {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: -40px;
+  z-index: 10;
+  position: relative;
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.globeTitle {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-color, #2b3a55);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.globeSubtitle {
+  font-size: 16px;
+  color: #666666;
+  max-width: 600px;
+  margin: 12px auto 0;
+  line-height: 1.5;
+}
+
+.globeContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* A soft, beautiful radial glow behind the globe */
+.globeGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(135, 206, 235, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* A subtle "platform" gradient at the bottom */
+.globePlatform {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 150px;
+  background: radial-gradient(ellipse at center, rgba(70, 130, 180, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.globeView {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  z-index: 5;
+  margin-top: 20px;
+}
+
+.globeView:active {
+  cursor: grabbing;
+}
+
+/* 추가하신 하단 3개 Stat Box 스타일링 */
+.globalStats {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  max-width: 1000px;
+  width: 100%;
+  margin: -40px auto 60px; /* 지구본 아래 단상(Platform) 위로 살짝 겹치게 올려서 입체감 부여 */
+  padding: 0 20px;
+  z-index: 10;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.statBox {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 24px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(135, 206, 235, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statBox:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(70, 130, 180, 0.2);
+}
+
+.statTitle {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-color, #4682b4);
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.statDesc {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .processSection {
+    padding: 18px 16px;
+    overflow: visible;
+  }
+
+  .processWrapper {
+    width: min(100%, 420px);
+    min-width: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .processGroup {
+    width: 100%;
+  }
+
+  .processGroup:last-child {
+    display: none;
+  }
+
+  .lineConnect,
+  .lineFadeInFirst,
+  .dot {
+    display: none;
+  }
+
+  .stepContent {
+    width: 100%;
+    margin-right: 0;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(135, 206, 235, 0.28);
+    box-shadow: 0 8px 24px rgba(70, 130, 180, 0.08);
+  }
+
+  .icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 20px;
+    margin-right: 0;
+    border-radius: 12px;
+  }
+
+  .textBlock {
+    width: auto;
+    min-width: 0;
+    gap: 2px;
+  }
+
+  .stepLabel {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .stepTitle {
+    font-size: 14px;
+  }
+
+  .stepDesc {
+    font-size: 12px;
+    line-height: 1.45;
+    margin-top: 2px;
+  }
+
+  .globeHeader {
+    margin-top: 24px;
+    margin-bottom: -18px;
+    padding: 0 16px;
+  }
+
+  .globeTitle {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .globeSubtitle {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}

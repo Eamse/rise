@@ -1,0 +1,154 @@
+.adminContainer {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f4f7fa;
+  font-family: "Inter", "Noto Sans KR", sans-serif;
+}
+
+.adminSidebar {
+  width: 260px;
+  background-color: #1a233a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.adminLogo {
+  padding: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.adminLogo h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.adminBadge {
+  background-color: #e74c3c;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.adminNav {
+  padding: 24px 0;
+  flex: 1;
+}
+
+.adminNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.adminNavItem {
+  display: block;
+  padding: 16px 24px;
+  color: #a4b4cb;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+  border-left: 4px solid transparent;
+}
+
+.navSeparator {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+
+.adminNavItem:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  padding-left: 28px;
+}
+
+.adminNavItemActive {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-left: 4px solid #3498db;
+  font-weight: 600;
+}
+
+.navBottom {
+  margin-top: auto;
+}
+
+.backToShop {
+  color: #e74c3c;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.backToShop:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #ff6b5b;
+}
+
+.adminMain {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.adminTopbar {
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+}
+
+.topbarTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2b3643;
+}
+
+.topbarUser {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.adminGreeting {
+  color: #2b3643;
+  font-weight: 500;
+}
+
+.logoutBtn {
+  background-color: #fcebeb;
+  color: #e74c3c;
+  border: 1px solid #fad2d2;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.adminContentWrapper {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+}

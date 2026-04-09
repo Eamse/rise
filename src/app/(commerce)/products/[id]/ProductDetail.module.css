@@ -1,0 +1,389 @@
+.productDetailPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 200px 20px 80px;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: #333;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.breadcrumb span {
+  cursor: pointer;
+}
+
+.breadcrumb span:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .current {
+  color: #111;
+  font-weight: 500;
+}
+
+.detailTop {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+}
+
+.detailGallerySection {
+  display: flex;
+  gap: 15px;
+}
+
+.detailThumbList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbItem {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e2e2e2;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.thumbItem.active,
+.thumbItem:hover {
+  border: 2px solid #ff6a00;
+}
+
+.thumbItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.detailMainImage {
+  width: 450px;
+  height: 450px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+.detailMainImage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.noImageBox {
+  color: #999;
+  font-size: 16px;
+}
+
+.detailInfo {
+  flex: 1;
+  min-width: 450px;
+}
+
+.productTitle {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.productMeta {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.stars {
+  color: #ffb526;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.ratingScore {
+  font-weight: bold;
+  color: #111;
+  margin-right: 10px;
+}
+
+.reviewCount {
+  color: #0066c0;
+  cursor: pointer;
+}
+
+.metaDivider {
+  margin: 0 10px;
+  color: #ccc;
+}
+
+.soldCount {
+  color: #555;
+  background: #f4f4f4;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.priceOrderPanel {
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #e2e2e2;
+}
+
+.originalPrice {
+  font-size: 16px;
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+}
+
+.priceValueRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.discountBadge {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ff3b30;
+}
+
+.priceValue {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1a1a1a;
+  display: flex;
+  align-items: baseline;
+}
+
+.priceValue .currency {
+  font-size: 22px;
+  margin-right: 4px;
+  font-weight: 700;
+}
+
+.minOrderBlock {
+  text-align: right;
+}
+
+.moqLabel {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.moqValue {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.infoRow {
+  display: flex;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.infoLabel {
+  width: 100px;
+  color: #777;
+}
+
+.infoValue {
+  flex: 1;
+  color: #111;
+}
+
+.descText {
+  font-weight: normal;
+  color: #444;
+}
+
+.inStock {
+  color: #00a650;
+}
+
+.outOfStock {
+  color: #cb1400;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #e2e2e2;
+  margin: 24px 0;
+}
+
+.purchaseControls {
+  margin-bottom: 20px;
+}
+
+.quantityWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.qtyLabel {
+  width: 100px;
+  font-size: 14px;
+  color: #777;
+}
+
+.quantitySelector {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.quantitySelector button {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+.quantitySelector input {
+  width: 50px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.totalWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.totalLabel {
+  font-size: 15px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.totalAmount {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.btnAddCart,
+.btnBuyNow {
+  flex: 1;
+  padding: 16px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnAddCart {
+  background-color: #fff;
+  border: 1px solid #ff6a00;
+  color: #ff6a00;
+}
+
+.btnBuyNow {
+  background-color: #ff6a00;
+  border: 1px solid #ff6a00;
+  color: #fff;
+}
+
+.supplierAssurance {
+  font-size: 13px;
+  color: #555;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.detailBottomSection {
+  margin-top: 60px;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.bottomTabs {
+  display: flex;
+  background: #f8f8f8;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.tabBtn {
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-right: 1px solid #e2e2e2;
+}
+
+.tabBtn.active {
+  background: #fff;
+  color: #ff6a00;
+  border-top: 3px solid #ff6a00;
+  margin-top: -1px;
+}
+
+.detailImagesContainer {
+  padding: 40px;
+  text-align: center;
+}
+
+.bottomDetailImg {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+
+.emptyDetails {
+  padding: 50px 0;
+  color: #888;
+  font-size: 16px;
+}
